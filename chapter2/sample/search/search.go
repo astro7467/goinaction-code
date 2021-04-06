@@ -28,7 +28,7 @@ func Run(searchTerm string) {
 
 	// Launch a goroutine for each feed to find the results.
 	for i, feed := range feeds {
-		log.Printf("Processing Feed No. %d\n", i)
+		log.Printf("Processing Feed No. %d / %d \n", i, len(feeds))
 		// Retrieve a matcher for the search.
 		matcher, exists := matchers[feed.Type]
 		if !exists {
@@ -43,9 +43,9 @@ func Run(searchTerm string) {
 	}
 
 	// Launch a goroutine to monitor when all the work is done.
+	log.Printf("Waiting for %d Threads to complete...\n", len(feeds))
 	go func() {
 		// Wait for everything to be processed.
-		log.Printf("Waiting for Threads to complete...\n")
 		waitGroup.Wait()
 
 		// Close the channel to signal to the Display
