@@ -2,10 +2,11 @@ package main
 
 import (
 	"log"
+	// "m/v2/chapter2/sample/search"
 	"os"
 
-	_ "github.com/goinaction/code/chapter2/sample/matchers"
-	"github.com/goinaction/code/chapter2/sample/search"
+	_ "chapter2/sample/m/v2/matchers"
+	"chapter2/sample/m/v2/search"
 )
 
 // init is called prior to main.
@@ -17,5 +18,5 @@ func init() {
 // main is the entry point for the program.
 func main() {
 	// Perform the search for the specified term.
-	search.Run("space")
+	search.Run("mars")
 }

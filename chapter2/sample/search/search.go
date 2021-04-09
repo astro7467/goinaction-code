@@ -28,7 +28,7 @@ func Run(searchTerm string) {
 
 	// Launch a goroutine for each feed to find the results.
 	for i, feed := range feeds {
-		log.Printf("Processing Feed No. %d / %d \n", i, len(feeds))
+		log.Printf("Processing Feed No. %d / %d \n", i+1, len(feeds))
 		// Retrieve a matcher for the search.
 		matcher, exists := matchers[feed.Type]
 		if !exists {
