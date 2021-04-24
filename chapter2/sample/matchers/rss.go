@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"regexp"
 
-	"chapter2/sample/m/v2/search"
+	"m/v2/chapter2/sample/search"
 	// "github.com/goinaction/code/chapter2/sample/search"
 )
 
